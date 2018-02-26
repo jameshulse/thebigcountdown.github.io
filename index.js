@@ -20,10 +20,10 @@ function padZero(value) {
     return ('00' + value).slice(-2);
 }
 
-var fakeTime = new Date('2018-03-11 08:59:55');
+//var fakeTime = new Date('2018-03-11 08:59:55');
 
 var ticker = setInterval(function () {
-    var left = target - fakeTime; //Date.now();
+    var left = target - Date.now(); // - fakeTime;
     var duration = moment.duration(left);
 
     if (left < 0) {
@@ -42,5 +42,5 @@ var ticker = setInterval(function () {
         clock.textContent = `${padZero(duration.get('hours'))}:${padZero(duration.get('minutes'))}:${padZero(duration.get('seconds'))}`;
     }
 
-    fakeTime.setTime(fakeTime.getTime() + 100);
+    //fakeTime.setTime(fakeTime.getTime() + 100);
 }, 100);
