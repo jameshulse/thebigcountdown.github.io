@@ -1,4 +1,4 @@
-var target = new Date('2018-04-01 09:00:00');
+var target = new Date(2018, 3, 1, 9); // 0 indexed months
 var clock = document.querySelector('.clock');
 
 var player;
