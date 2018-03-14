@@ -1,4 +1,4 @@
-var target = new Date(2018, 3, 1, 9); // 0 indexed months
+var target = new Date('2018-03-29 15:00:00');
 var clock = document.querySelector('.clock');
 
 var player;
@@ -20,10 +20,8 @@ function padZero(value) {
     return ('00' + value).slice(-2);
 }
 
-//var fakeTime = new Date('2018-03-11 08:59:55');
-
 var ticker = setInterval(function () {
-    var left = target - Date.now(); // - fakeTime;
+    var left = target - Date.now();
     var duration = moment.duration(left);
 
     if (left < 0) {
@@ -41,6 +39,4 @@ var ticker = setInterval(function () {
     } else {
         clock.textContent = `${padZero(duration.get('hours'))}:${padZero(duration.get('minutes'))}:${padZero(duration.get('seconds'))}`;
     }
-
-    //fakeTime.setTime(fakeTime.getTime() + 100);
 }, 100);
