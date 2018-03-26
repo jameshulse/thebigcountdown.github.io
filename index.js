@@ -1,4 +1,4 @@
-var target = moment('2018-03-29 15:00:00');
+var target = moment('2018-04-03 18:00:00');
 var clock = document.querySelector('.clock');
 
 var player;
